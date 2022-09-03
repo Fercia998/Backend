@@ -27,7 +27,7 @@ app.get('/', (req, res)=>{
 })
 
 //lister les chausssures de la BD
-app.get('/api/get', (req, res)=>{
+app.get('/api/chaussures', (req, res)=>{
     
     con.query('SELECT * FROM chaussures',(err,result)=>{
         if(err) res.status(500).send(err)
@@ -36,7 +36,7 @@ app.get('/api/get', (req, res)=>{
     })
 })
 
-app.get('/api/get', (req, res)=>{
+app.get('/api/marques', (req, res)=>{
     
     con.query('SELECT * FROM marques',(err,result)=>{
         if(err) res.status(500).send(err)
@@ -56,7 +56,7 @@ app.get('/api/get/:id', (req, res)=>{
 })
 
 
-app.post('/api/post', (req, res)=>{
+app.post('/api/chaussures', (req, res)=>{
     const id_Marque = req.body.id_Marque;
     const taille = req.body.taille;
     const couleur = req.body.couleur;
